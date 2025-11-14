@@ -24,7 +24,7 @@ public class ReactorContext {
 
     public void enableMaintenanceMode() {
         this.maintenanceMode = true;
-        System.out.println("🔧 Modo manutenção ativado");
+        System.out.println(" Modo manutenção ativado");
     }
 
     public boolean isMaintenanceMode() { return maintenanceMode; }
