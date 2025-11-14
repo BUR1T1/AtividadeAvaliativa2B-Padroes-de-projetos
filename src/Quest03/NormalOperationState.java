@@ -10,7 +10,7 @@ public class NormalOperationState implements ReactorState {
         if (context.getTemperature() > 300)
             context.setState(new YellowAlertState());
         else
-            System.out.println("🟢 Operação normal.");
+            System.out.println(" Operação normal.");
     }
     public String getName() { return "OPERACAO_NORMAL"; }
 }
