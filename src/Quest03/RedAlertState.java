@@ -12,7 +12,7 @@ public class RedAlertState implements ReactorState {
         else if (context.getTemperature() < 300)
             context.setState(new NormalOperationState());
         else
-            System.out.println("🔴 Alerta vermelho! Risco alto!");
+            System.out.println("Alerta vermelho! Risco alto!");
     }
     public String getName() { return "ALERTA_VERMELHO"; }
 }
