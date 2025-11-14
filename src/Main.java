@@ -120,18 +120,17 @@ Em resumo, o Strategy foi usado pra permitir que os algoritmos de risco fossem t
         System.out.println("Caso duplicidade + sefaz down: " + r4);
 
         // caso 5: validador lento (simula timeout)
-        // aqui criamos um validator lento dinamicamente para demonstrar timeout
         Validator slowValidator = new Validator() {
             public String name() { return "SlowValidator"; }
-            public int timeoutSeconds() { return 1; } // 1s timeout
+            public int timeoutSeconds() { return 1; } 
             public ValidationResult validate(FiscalDocument doc) throws Exception {
-                Thread.sleep(3000); // 3s -> vai exceder
+                Thread.sleep(3000); 
                 return ValidationResult.ok("Slow ok");
             }
         };
 
         List<Validator> validatorsWithSlow = new ArrayList<>(validators);
-        validatorsWithSlow.add(2, slowValidator); // insere antes de TaxRules por exemplo
+        validatorsWithSlow.add(2, slowValidator);
         ValidationChainRunner runner2 = new ValidationChainRunner(validatorsWithSlow, 3);
 
         FiscalDocument docSlow = new FiscalDocument("NF5", "<xml><ok/></xml>");
