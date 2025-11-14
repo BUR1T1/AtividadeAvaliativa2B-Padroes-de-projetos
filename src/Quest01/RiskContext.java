@@ -4,9 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RiskContext {
-    // ============================
-    // ATRIBUTOS IMUTÁVEIS
-    // ============================
+   
     private final Map<String, Double> financialData;
     private final String scenario;
     private final double confidenceLevel;
@@ -20,9 +18,6 @@ public class RiskContext {
         this.horizonDays = builder.horizonDays;
     }
 
-    // ============================
-    // GETTERS
-    // ============================
     public Map<String, Double> getFinancialData() {
         return financialData;
     }
@@ -39,9 +34,6 @@ public class RiskContext {
         return horizonDays;
     }
 
-    // ============================
-    // BUILDER INTERNO ESTÁTICO
-    // ============================
     public static class Builder {
         private Map<String, Double> financialData = new HashMap<>();
         private String scenario = "DEFAULT";
